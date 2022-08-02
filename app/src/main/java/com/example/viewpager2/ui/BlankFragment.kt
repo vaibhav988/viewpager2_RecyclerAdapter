@@ -23,7 +23,7 @@ import kotlinx.coroutines.launch
  * create an instance of this fragment.
  */
 
-class BlankFragment(val string: String) : Fragment() {
+class BlankFragment(val filterQuery: String) : Fragment() {
     // TODO: Rename and change types of parameters
 
 
@@ -45,7 +45,7 @@ class BlankFragment(val string: String) : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        initViews()
+        initViews()                    // intializing views
         return binding.root
     }
 
@@ -56,15 +56,14 @@ class BlankFragment(val string: String) : Fragment() {
             layoutManager = LinearLayoutManager(context.applicationContext)
             adapter = recyclerAdapter
         }
-        imageRepo = ImageRepo()
-        viewModel = ImageViewModel(imageRepo)
-        viewModel.getImages(string)
-
+        imageRepo = ImageRepo()            // initializing ImageRepo
+        viewModel = ImageViewModel(imageRepo)   // intializing viewmodel
+       
         lifecycleScope.launch {
-            viewModel.getImages(string)
+            viewModel.getImages(filterQuery)     // calling to retrofit via viewmodel->imageRepo->Retrofit
         }
 
-        viewModel.listImages.observe(viewLifecycleOwner)
+        viewModel.listImages.observe(viewLifecycleOwner)    // observing livadata changes
         {
             recyclerAdapter.submitList(it)
         }
