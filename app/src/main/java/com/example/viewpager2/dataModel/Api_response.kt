@@ -1,8 +1,5 @@
-package com.example.viewpager2.DataModel
+package com.example.viewpager2.dataModel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import com.example.viewpager2.DataModel.image
 import com.google.gson.annotations.SerializedName
 
 

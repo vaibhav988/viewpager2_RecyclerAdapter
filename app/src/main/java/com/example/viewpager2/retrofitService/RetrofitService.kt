@@ -1,6 +1,6 @@
-package com.example.viewpager2.RetrofitService
+package com.example.viewpager2.retrofitService
 
-import com.example.viewpager2.DataModel.API
+import com.example.viewpager2.dataModel.API
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

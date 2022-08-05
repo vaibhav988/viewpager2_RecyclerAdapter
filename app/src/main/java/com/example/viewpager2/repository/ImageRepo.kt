@@ -1,11 +1,9 @@
-package com.example.viewpager2.Repository
+package com.example.viewpager2.repository
 
-import android.util.Log
-import androidx.lifecycle.MutableLiveData
-import com.example.viewpager2.DataModel.API
-import com.example.viewpager2.DataModel.image
-import com.example.viewpager2.RetrofitService.ImageService
-import com.example.viewpager2.RetrofitService.RetrofitService
+import com.example.viewpager2.dataModel.API
+import com.example.viewpager2.dataModel.image
+import com.example.viewpager2.retrofitService.ImageService
+import com.example.viewpager2.retrofitService.RetrofitService
 
 class ImageRepo {
 

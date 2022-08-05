@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.viewpager2.DataModel.image
+import com.example.viewpager2.dataModel.image
 import com.example.viewpager2.R
 import com.example.viewpager2.databinding.RecyclerItemBinding
 import com.squareup.picasso.Picasso
@@ -36,7 +36,7 @@ class RecyclerAdapter(val context: Context) :
 }
 class DiffCallback : DiffUtil.ItemCallback<image>() {
     override fun areItemsTheSame(oldItem: image, newItem: image): Boolean {
-        return oldItem?.id == newItem?.id
+        return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(oldItem: image, newItem: image): Boolean {
